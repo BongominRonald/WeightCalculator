@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Set character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
+    <title>Advanced & Ordinary Level Calculator</title> <!-- Page title -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%2310A37F'%3E%E2%9A%96%3C/text%3E%3C/svg%3E"> <!-- Favicon -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%2310A37F'%3E%E2%9A%96%3C/text%3E%3C/svg%3E"> <!-- Apple touch icon -->
+    <meta name="theme-color" content="#10A37F"> <!-- Theme color -->
+    <link rel="stylesheet" href="/Charm/assets/style.css"> <!-- Link to shared styles -->
+    <script src="/Charm/assets/script.js"></script> <!-- Link to shared scripts -->
+</head>
+<body> <!-- Body start -->
+    <div class="landing"> <!-- Container for landing forms -->
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <h3 style="text-align:center; font-size:1.5em; margin-bottom:20px;"><span style="font-size:3em; display:block; margin-bottom:10px;">⚖️</span>WELCOME TO THE S6 WEIGHT CALCULATOR</h3>
+            <div class="theme-toggle off" role="switch" aria-checked="false" aria-label="Toggle theme" tabindex="0" style="margin-left:auto"><span class="thumb"></span></div>
+        </div>
+        <p style="text-align:center;">Create an account or log in, then use the sidebar to proceed.</p> <!-- Intro text -->
+
+        <div class="tabs"> <!-- Tab switcher -->
+            <div id="tab-login" class="tab active" onclick="switchTab('login')">🔐 Log In</div> <!-- Log In tab -->
+            <div id="tab-signup" class="tab" onclick="switchTab('signup')">✍️ Sign Up</div> <!-- Sign Up tab -->
+        </div> <!-- Tabs end -->
+
+        <div id="msg-error" class="message error hidden"></div> <!-- Error container -->
+        <div id="msg-success" class="message success hidden"></div> <!-- Success container -->
+
+        <div id="panel-login"> <!-- Login panel -->
+            <div class="card"> <!-- Card container -->
+                <h3>🔐 Log In</h3> <!-- Section title -->
+                <form method="post" action="app/controllers/AuthController.php?action=login"> <!-- Login form posts to AuthController -->
+                    <label>Email</label> <!-- Email label -->
+                    <input name="email" type="email" required> <!-- Email input -->
+                    <label>Password</label> <!-- Password label -->
+                    <input name="password" type="password" required> <!-- Password input -->
+                    <button type="submit" class="btn btn-primary">Log In</button> <!-- Submit button -->
+                </form> <!-- End login form -->
+                <p class="progress-note">First time? Go to Sign Up.</p> <!-- Hint -->
+            </div> <!-- End card -->
+        </div> <!-- End login panel -->
+
+        <div id="panel-signup" class="hidden"> <!-- Signup panel hidden by default -->
+            <div class="card"> <!-- Card container -->
+                <h3>✍️ Create Account</h3> <!-- Section title -->
+                <form method="post" action="app/controllers/AuthController.php?action=signup"> <!-- Signup form posts to AuthController -->
+                    <label>Username</label> <!-- Username label -->
+                    <input name="username" type="text" required> <!-- Username input -->
+                    <label>Email</label> <!-- Email label -->
+                    <input name="email" type="email" required> <!-- Email input -->
+                    <label>Password (6+ chars, letters and numbers)</label> <!-- Password label -->
+                    <input name="password" type="password" required> <!-- Password input -->
+                    <label>Gender</label> <!-- Gender label -->
+                    <select name="gender" required> <!-- Gender select -->
+                        <option value="">Select</option> <!-- Empty option -->
+                        <option value="male">Male</option> <!-- Male option -->
+                        <option value="female">Female</option> <!-- Female option -->
+                    </select> <!-- End gender select -->
+                    <button type="submit" class="btn btn-primary">Create Account</button> <!-- Submit button -->
+                </form> <!-- End signup form -->
+                <p class="progress-note">Password must include letters and numbers.</p> <!-- Hint -->
+            </div> <!-- End card -->
+        </div> <!-- End signup panel -->
+
+        <div class="footer"> <!-- Footer credits -->
+            Developed by Bongomin Ronald. WhatsApp: 0774120185/0759343570. Email: abonga029@gmail.com
+        </div> <!-- Footer end -->
+    </div> <!-- Landing end -->
+</body> <!-- Body end -->
+</html> <!-- HTML end -->
